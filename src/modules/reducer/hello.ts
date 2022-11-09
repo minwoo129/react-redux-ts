@@ -8,7 +8,7 @@ export default createReducer<HelloStateType, HelloActionType>(initialState, {
   [ADD_COUNT]: (state, action) => {
     const newState: HelloStateType = {
       ...state,
-      count: action.payload,
+      count: state.count + action.payload,
     };
 
     return newState;
@@ -16,7 +16,7 @@ export default createReducer<HelloStateType, HelloActionType>(initialState, {
   [DEC_COUNT]: (state, action) => {
     const newState: HelloStateType = {
       ...state,
-      count: action.payload,
+      count: state.count - action.payload,
     };
 
     return newState;

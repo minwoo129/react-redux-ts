@@ -1,8 +1,10 @@
 import React, { useState, ChangeEvent, MouseEvent } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { addCount, decCount } from "./modules/actions/hello";
 import { RootState } from "./modules/reducer";
 
 const App = () => {
+  const dispatch = useDispatch();
   const count = useSelector((state: RootState) => state.hello.count);
 
   const [txt, setTxt] = useState<string>("");
@@ -12,11 +14,13 @@ const App = () => {
   };
 
   const onClickAdd = (e: MouseEvent<HTMLButtonElement>) => {
-    console.log("txt: ", txt);
+    dispatch(addCount(Number(txt)));
+    setTxt("");
   };
 
   const onClickDec = (e: MouseEvent<HTMLButtonElement>) => {
-    console.log("txt: ", txt);
+    dispatch(decCount(Number(txt)));
+    setTxt("");
   };
 
   return (
