@@ -1,2 +1,6 @@
 export const ADD_COUNT = "hello/ADD_COUNT";
 export const DEC_COUNT = "hello/DEC_COUNT";
+
+export const GET_GITHUB_PROFILE = "hello/GET_GITHUB_PROFILE";
+export const GET_GITHUB_PROFILE_SUCCESS = "hello/GET_GITHUB_PROFILE_SUCCESS";
+export const GET_GITHUB_PROFILE_ERROR = "hello/GET_GITHUB_PROFILE_ERROR";
